@@ -13,7 +13,7 @@
 
 ## Support
 
-- Net6+
+- Net8+
 
 ## Features
 
