@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace NotoriousModules.OpenApi
+namespace NotoriousModules
 {
     public abstract class OpenApiModule : Module
     {

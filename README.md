@@ -57,11 +57,11 @@ For example, in a basic e-commerce applications, we could have a modules for inv
 **Notorious Modules** provide a base class for modules :
 
 ```csharp
-public class NutritionModule : NotoriousModules.Modules
+public class ExampleModule : NotoriousModules.Modules
 {
-    public override string ModuleName => "Nutrition";
+    public override string ModuleName => "Example";
 
-    public NutritionModule() : base()
+    public ExampleModule() : base()
     {
     }
 
@@ -133,3 +133,35 @@ app.UseModules();
 ```
 
 And that's it, now u can create an infinite number of modules or extend module to create your own base modules.
+
+For example, here's one module that integrate Swagger UI :
+
+```csharp
+public abstract class OpenApiModule : Module
+{
+    public OpenApiModule() : base()
+    {
+    }
+
+
+    protected override void ConfigureEachEndpoint(IEndpointConventionBuilder routeHandlerBuilder)
+    {
+        base.ConfigureEachEndpoint(routeHandlerBuilder);
+
+        routeHandlerBuilder
+            .WithTags(ModuleName)
+            .WithOpenApi();
+    }
+}
+
+public class ExampleModule : NotoriousModules.OpenApiModule
+{
+    public override string ModuleName => "Example";
+
+    public ExampleModule() : base()
+    {
+    }
+
+    ...
+}
+```
