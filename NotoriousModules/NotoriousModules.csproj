@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Description>A simple way to handle integration tests environment, with complete isolation of every tests.</Description>
+		<PackageId>NotoriousTest</PackageId>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Version>1.0.0</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>Brice SCHUMACHER</Authors>
+		<RepositoryUrl>https://github.com/Notorious-Coding/Notorious-Modules/</RepositoryUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<IsPackable>true</IsPackable>
+	</PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\icon.png" Pack="true" PackagePath="" Visible="False" />
+		<None Include="..\README.md" Pack="true" PackagePath="" Visible="False" />
+		<None Include="..\LICENSE.txt" Pack="true" PackagePath="" Visible="False" />
+	</ItemGroup>
+</Project>
